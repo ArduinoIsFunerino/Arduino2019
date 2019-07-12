@@ -1,0 +1,21 @@
+int red = 3;              // red is 3
+int green = 5;
+int blue = 6;
+
+void setup() {
+  pinMode(red, OUTPUT);   // since red is 3, this means the same
+  pinMode(green, OUTPUT); //       as pinMode(3, OUTPUT);
+  pinMode(blue, OUTPUT);
+}
+
+void loop() {
+  analogWrite(red, 0);  // analogWrite( [pin] , [signal strength] )
+  analogWrite(green, 5);  // [signal strength] between 0 and 255
+  analogWrite(blue, 5);
+  delay(500);            // wait 1000 milliseconds (1 second)
+
+  analogWrite(red, 3);
+  analogWrite(green, 3);
+  analogWrite(blue, 3);
+  delay(500);
+}
