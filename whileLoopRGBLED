@@ -1,0 +1,31 @@
+int red = 0;
+int green = 0;
+int blue = 0;
+
+void setup() {
+  pinMode(3, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+}
+
+void loop() {
+  while(red < 255) {                //while red is less than 255, repeat this loop
+    changeLED(red, green, blue);    //    LOOP: change LED colors
+    red++;                          //          increase red by 1
+    delay(5);                       //          wait 5 milliseconds
+  }
+
+                                    //at this point, red is 255
+  
+  while(red > 0) {                  //same thing but backwards
+    changeLED(red, green, blue);    //red starts at 255 and goes down to 0 
+    red--;
+    delay(5);
+  }
+}
+
+void changeLED(int red, int green, int blue) {    //function to change colors
+  analogWrite(3, red);
+  analogWrite(5, green);
+  analogWrite(6, blue);
+}
