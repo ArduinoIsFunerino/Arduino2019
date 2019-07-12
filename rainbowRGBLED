@@ -1,0 +1,36 @@
+int R = 255;
+int G = 0;
+int B = 0;
+
+void setup() {
+    pinMode(3, OUTPUT);
+    pinMode(5, OUTPUT);
+    pinMode(6, OUTPUT);
+}
+
+void loop() {
+  while(R > 0){
+    R--;
+    G++;
+    writeTo(R,G,B);
+    delay(10);
+  }
+  while(G > 0){
+    G--;
+    B++;
+    writeTo(R,G,B);
+    delay(10);
+  }
+  while(B > 0){
+    B--;
+    R++;
+    writeTo(R,G,B);
+    delay(10);
+  }
+}
+
+void writeTo(int red, int green, int blue){
+  analogWrite(3, red);
+  analogWrite(5, green);
+  analogWrite(6, blue);
+}
